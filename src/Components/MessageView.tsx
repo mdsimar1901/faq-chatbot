@@ -1,31 +1,42 @@
 import React from "react";
+import { Box, Typography } from "@mui/material";
+import FaceIcon from "@mui/icons-material/Face";
 
-interface MessageViewProps {
-  text: string;
-}
-
-function MessageView({text}: MessageViewProps){
+const MessageSkeleton: React.FC = () => {
   return (
-    <div className="text-white text-sm w-48 mb-2 p-2 rounded-lg self-start text-left break-words whitespace-pre-wrap bg-purple-700">
-      <div className="flex gap-3">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5 pink-blue-700"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-          />
-        </svg>
-        <div className="bg-pink-700 text-white p-2 rounded-lg">{text}</div>
-      </div>
-    </div>
+    <Box
+      sx={{
+        fontSize: "14px",
+        width: "150px",
+        padding: "10px",
+        marginBottom: "10px",
+        borderRadius: "8px",
+        alignSelf: "flex-start",
+        textAlign: "left",
+        wordWrap: "break-word",
+        whiteSpace: "pre-wrap",
+        color: "white",
+        display: "flex",
+        gap: "3px",
+      }}
+    >
+      <FaceIcon sx={{ color: "#694D76" }} />
+      <Typography
+        sx={{
+          fontSize: "12px",
+          width: "150px",
+          padding: "10px",
+          borderRadius: "8px",
+          backgroundColor: "#694D76",
+          color: "white",
+          wordWrap: "break-word",
+          whiteSpace: "pre-wrap",
+        }}
+      >
+        Typing...
+      </Typography>
+    </Box>
   );
 };
 
-export default MessageView;
+export default MessageSkeleton;

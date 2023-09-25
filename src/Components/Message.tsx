@@ -1,71 +1,21 @@
-import React, { useState } from "react";
-import FaceIcon from "@mui/icons-material/Face";
+// Messages.tsx
 
-interface MessageProps {
-  message: {
-    text: string;
-    user: boolean;
-  };
-  index: number;
-  handleMouseEnter: (index: number) => void;
-  handleMouseLeave: () => void;
-  handleClick: (index: number) => void;
-}
+import React, { useState } from 'react';
+import { Box, Typography } from '@mui/material';
+import FaceIcon from '@mui/icons-material/Face';
+import ResponseBox from "./ResponseBox";
 
-function Message({
-  message,
-  index,
-  handleMouseEnter,
-  handleMouseLeave,
-  handleClick,
-}: MessageProps) {
-  const isUserMessage = message.user;
-  const messageBackgroundColor = isUserMessage ? "bg-gray-300" : "bg-purple-700";
-  const messageTextColor = isUserMessage ? "text-black" : "text-white";
-  const cursorStyle = isUserMessage ? "cursor-auto" : "cursor-pointer";
-
-  const handleMouseEnterMessage = () => {
-    handleMouseEnter(index);
-  };
-
-  const handleMouseLeaveMessage = () => {
-    handleMouseLeave();
-  };
-
-  const handleClickMessage = () => {
-    handleClick(index);
-  };
-
-  return (
-    <div
-      key={index}
-      onMouseEnter={handleMouseEnterMessage}
-      onMouseLeave={handleMouseLeaveMessage}
-      onClick={handleClickMessage}
-      className={`flex ${
-        isUserMessage ? "flex-row-reverse" : "flex-row"
-      } gap-3 mt-10 mb-20 relative`}
-    >
-      {!isUserMessage && <FaceIcon className="text-purple-700" />}
-
-      <div
-        className={`text-12px w-fit-content max-w-260px p-10 rounded-lg break-words whitespace-pre-wrap flex ${messageBackgroundColor} ${messageTextColor} ${cursorStyle} relative`}
-      >
-        {message.text}
-      </div>
-    </div>
-  );
+interface Message {
+  text: string;
+  user: boolean;
 }
 
 interface MessagesProps {
-  messages: {
-    text: string;
-    user: boolean;
-  }[];
+  messages: Message[];
   setCustomInput: (text: string) => void;
 }
 
-function Messages({ messages, setCustomInput }: MessagesProps) {
+const Messages: React.FC<MessagesProps> = ({ messages, setCustomInput }) => {
   const [hoveredMessageIndex, setHoveredMessageIndex] = useState(-1);
 
   const handleMouseEnter = (index: number) => {
@@ -77,23 +27,60 @@ function Messages({ messages, setCustomInput }: MessagesProps) {
   };
 
   const handleClick = (index: number) => {
-    setCustomInput(messages[index].text);
+    if (hoveredMessageIndex === index) {
+      setHoveredMessageIndex(-1); // Hide the ResponseBox on click
+    } else {
+      setHoveredMessageIndex(index);
+    }
   };
 
   return (
-    <div className="flex flex-col gap-20">
+    <Box sx={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
       {messages.map((message, index) => (
-        <Message
+        <Box
           key={index}
-          message={message}
-          index={index}
-          handleMouseEnter={handleMouseEnter}
-          handleMouseLeave={handleMouseLeave}
-          handleClick={handleClick}
-        />
+          sx={{
+            display: 'flex',
+            flexDirection: message.user ? 'row-reverse' : 'row',
+            gap: '3px',
+            marginTop: '10px',
+            marginBottom: '20px',
+            position: 'relative', // Add position relative to this container
+          }}
+        >
+          {!message.user && <FaceIcon sx={{ color: '#694D76' }} />}
+
+          <Typography
+            onMouseEnter={() => handleMouseEnter(index)}
+            onMouseLeave={handleMouseLeave}
+            onClick={() => handleClick(index)}
+            sx={{
+              fontSize: '12px',
+              width: 'fit-content',
+              maxWidth: '260px',
+              padding: '10px',
+              borderRadius: '8px',
+              backgroundColor: message.user ? '#f0f0f0' : '#694D76',
+              color: message.user ? 'black' : 'white',
+              wordWrap: 'break-word',
+              whiteSpace: 'pre-wrap',
+              cursor: message.user ? 'auto' : 'pointer', // Corrected 'null' to 'auto'
+              display: 'flex',
+              alignItems: 'center',
+              position: 'relative',
+            }}
+          >
+            {message.text}
+            {message.user
+              ? null
+              : hoveredMessageIndex === index && (
+                  <ResponseBox setCustomInput={setCustomInput} />
+                )}
+          </Typography>
+        </Box>
       ))}
-    </div>
+    </Box>
   );
-}
+};
 
 export default Messages;

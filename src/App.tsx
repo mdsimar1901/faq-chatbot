@@ -6,33 +6,38 @@ import {
   Slide,
   Typography,
 } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
 import CloseIcon from "@mui/icons-material/Close";
 import Chatbot from "./Components/Chatbot";
+import ChatIcon from "@mui/icons-material/Chat";
+
+
 
 function App(): JSX.Element {
   const [isBotActivated, setIsBotActivated] = useState<boolean>(false);
 
   const toggleChatbot = (): void => {
-    setIsBotActivated((prev: boolean) => !prev);
+    setIsBotActivated((prev) => !prev);
   };
 
   return (
-    <Container className="flex flex-col min-w-full min-h-screen justify-center items-center bg-gray-100 overflow-hidden">
-      <Typography className="text-center mb-8 text-pink-700 font-semibold text-2xl md:text-3xl lg:text-4xl">
-        Welcome to the Chatbot App!
+    <Container sx={styles.container}>
+      <Typography variant="h1" sx={styles.title}>
+        AI Powered ChatBot 🚀
       </Typography>
-      <Typography className="text-center mb-8 w-80 md:w-1/2 font-normal text-lg lg:text-xl">
-        TThe ChatBot is Training.
+      <Typography variant="h6" sx={styles.description}>
+        Click on the below icon to continue.
       </Typography>
+      
+      <a href="https://github.com/" rel="noopener">GitHub Link</a>
+      <a href="" rel="noopener">Link for Documentation</a>
       <Slide
         direction={isBotActivated ? "up" : "down"}
         in={isBotActivated}
         mountOnEnter
         unmountOnExit
-        {...(isBotActivated ? { timeout: 10000 } : {})}
+        {...(isBotActivated ? { timeout: 1000 } : {})}
       >
-        <Box className="absolute right-4 md:right-16 bottom-16 lg:bottom-36">
+        <Box sx={styles.chatbotContainer}>
           {isBotActivated && <Chatbot />}
         </Box>
       </Slide>
@@ -40,12 +45,57 @@ function App(): JSX.Element {
       <Button
         variant="contained"
         onClick={toggleChatbot}
-        className="h-16 w-16 md:h-20 md:w-20 rounded-full fixed bottom-16 right-4 bg-purple-600 hover:bg-purple-800"
+        sx={styles.button}
       >
-        {isBotActivated ? <CloseIcon /> : <AddIcon />}
+        {isBotActivated ? <CloseIcon /> : <ChatIcon />}
       </Button>
     </Container>
   );
 }
+
+const styles = {
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    minWidth: "100%",
+    height: "100vh",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#fff", // Updated to silky white
+    overflow: "hidden",
+  },
+  title: {
+    textAlign: "center",
+    marginBottom: "20px",
+    color: "#333", 
+    fontWeight: "600",
+    fontSize: { xs: "28px", sm: "32px", lg: "46px" },
+  },
+  description: {
+    textAlign: "center",
+    marginBottom: "20px",
+    width: { sm: "80%", lg: "50%" },
+    fontWeight: "normal",
+    fontSize: { xs: "16px", sm: "20px", lg: "20px" },
+    color: "#555", 
+  },
+  chatbotContainer: {
+    position: "absolute",
+    right: "50px",
+    bottom: { lg: "85px" },
+  },
+  button: {
+    height: "40px",
+    width: "50px",
+    borderRadius: "40px",
+    position: "fixed",
+    bottom: { xs: "15px", lg: "16px" },
+    right: "25px",
+    backgroundColor: "#333",
+    ":hover": {
+      backgroundColor: "#555", 
+    },
+  },
+};
 
 export default App;
