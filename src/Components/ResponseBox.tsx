@@ -20,7 +20,6 @@ const ResponseBox: React.FC<ResponseBoxProps & BoxProps> = ({ setCustomInput, ..
         ...props.sx, // Allow passing additional styles
       }}
     >
-      {/* Content for ResponseBox */}
     </Box>
   );
 };

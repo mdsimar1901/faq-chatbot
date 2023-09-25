@@ -7,7 +7,11 @@ import {
   Typography,
 } from "@mui/material";
 
-function LoginPage(): JSX.Element {
+interface LoginProps {
+  setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+function Login(props: LoginProps): JSX.Element {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
@@ -19,11 +23,13 @@ function LoginPage(): JSX.Element {
     setPassword(e.target.value);
   };
 
-
   const handleLogin = () => {
-    console.log(username);
-    console.log(password);
-    
+    if (username === 'username' && password === 'password') {
+      props.setIsLoggedIn(true);
+    } else {
+      console.log('Invalid username or password');
+      alert("Wrong User name and Password");
+    }
   };
 
   return (
@@ -69,7 +75,7 @@ const styles = {
     height: "100vh",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#fff", 
+    backgroundColor: "#fff",
     overflow: "hidden",
   },
   title: {
@@ -98,4 +104,4 @@ const styles = {
   },
 };
 
-export default LoginPage;
+export default Login;

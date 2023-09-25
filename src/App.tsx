@@ -1,18 +1,28 @@
 import React, { useState } from "react";
-import LandingPage from "./Components/LandingPage";
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Login from "./Components/Login";
+import LandingPage from "./Components/LandingPage";
 
 function App(): JSX.Element {
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
- return(
-  <Router>
+  return (
+    <Router>
       <Routes>
-        <Route path="/" Component={Login} />
-        <Route path="/landing" Component={LandingPage} />
+        <Route
+          path="/"
+          element={
+            isLoggedIn ? (
+              <Navigate to="/landing" />
+            ) : (
+              <Login setIsLoggedIn={setIsLoggedIn} />
+            )
+          }
+        />
+        <Route path="/landing" element={<LandingPage />} />
       </Routes>
     </Router>
- )
-
+  );
 }
+
 export default App;
