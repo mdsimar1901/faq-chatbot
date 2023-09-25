@@ -4,7 +4,7 @@ interface MessageViewProps {
   text: string;
 }
 
-const MessageView: React.FC<MessageViewProps> = ({ text }) => {
+function MessageView({text}: MessageViewProps){
   return (
     <div className="text-white text-sm w-48 mb-2 p-2 rounded-lg self-start text-left break-words whitespace-pre-wrap bg-purple-700">
       <div className="flex gap-3">
