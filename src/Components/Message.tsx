@@ -23,12 +23,12 @@ const Messages: React.FC<MessagesProps> = ({ messages, setCustomInput }) => {
   };
 
   const handleMouseLeave = () => {
-    setHoveredMessageIndex(-1); // Clear hover state when leaving any message
+    setHoveredMessageIndex(-1); 
   };
 
   const handleClick = (index: number) => {
     if (hoveredMessageIndex === index) {
-      setHoveredMessageIndex(-1); // Hide the ResponseBox on click
+      setHoveredMessageIndex(-1); 
     } else {
       setHoveredMessageIndex(index);
     }
@@ -64,7 +64,7 @@ const Messages: React.FC<MessagesProps> = ({ messages, setCustomInput }) => {
               color: message.user ? 'black' : 'white',
               wordWrap: 'break-word',
               whiteSpace: 'pre-wrap',
-              cursor: message.user ? 'auto' : 'pointer', // Corrected 'null' to 'auto'
+              cursor: message.user ? 'auto' : 'pointer', 
               display: 'flex',
               alignItems: 'center',
               position: 'relative',

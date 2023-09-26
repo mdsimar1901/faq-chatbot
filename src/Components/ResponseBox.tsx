@@ -17,7 +17,7 @@ const ResponseBox: React.FC<ResponseBoxProps & BoxProps> = ({ setCustomInput, ..
         height: '30px',
         width: '60px',
         borderRadius: '5px',
-        ...props.sx, // Allow passing additional styles
+        ...props.sx, 
       }}
     >
     </Box>

@@ -39,11 +39,12 @@ const Chatbot: React.FC<ChatbotProps> = () => {
 
         setTimeout(() => {
           axios
-            .post("https://university-bot-server-2.onrender.com", {
-              inputText: customInput,
+            .post("http://127.0.0.1:5000/predict", {
+             text: customInput,
             })
             .then((response) => {
               console.log("Response from backend:", response.data);
+              console.log(response.data,"mk")
               const botResponse = {
                 text: response.data,
                 user: false,
@@ -73,13 +74,13 @@ const Chatbot: React.FC<ChatbotProps> = () => {
 
       setTimeout(() => {
         axios
-          .post("https://university-bot-server-2.onrender.com", {
-            inputText: inputText,
+          .post("http://127.0.0.1:5000/predict", {
+            text: inputText,
           })
           .then((response) => {
             console.log("Response from backend:", response.data);
             const botResponse = {
-              text: response.data,
+              text: response.data.answer,
               user: false,
             };
             setMessages((prevMessages) => [...prevMessages, botResponse]);
