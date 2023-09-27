@@ -6,9 +6,9 @@ I have built a FAQ chatbot with a React and Typescript front-end, a Flask and Mo
 
 <center>
 
-## Live Link - https://faq-chatbot-gcloud-deployment.vercel.app/
+Live Link - https://faq-chatbot-gcloud-deployment.vercel.app/
 
-## Backend Repo - https://github.com/mdsimar1901/faq-chatbot-backend
+Backend Repo - https://github.com/mdsimar1901/faq-chatbot-backend
 
 </center>
 # Arcitecture
