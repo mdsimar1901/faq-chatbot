@@ -1,46 +1,80 @@
-# Getting Started with Create React App
+# Ai Powered Chatbot (Kyro Task)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+I have built a FAQ chatbot with a React and Typescript front-end, a Flask and MongoDB back-end, and a deep learning-powered chatbot that provides responses based on user input.
+# Project Links
 
-## Available Scripts
+| Description     | Link                                           |
+|-----------------|-----------------------------------------------|
+| Live Link       | [Live Demo](https://ai-powered-faqchatbot.netlify.app/) |
+| Backend Repo    | [GitHub Repository](https://github.com/mdsimar1901/faq-chatbot-backend) |
 
-In the project directory, you can run:
+# Project Technology Stack
 
-### `npm start`
+| Layer      | Technology               |
+|------------|--------------------------|
+| Front-end  | React with TypeScript    |
+| Back-end   | Flask                    |
+| Database   | MongoDB                  |
+| Chatbot    | Deep Learning Model      |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Table of Contents
+- [Components](#components)
+- [Technologies_Used](#technologiesused)
+- [How to run Locally](#local)
+- [Functionalities And Features](#features)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Components
 
-### `npm test`
+![components](https://github.com/mdsimar1901/faq-chatbot/assets/66200713/cc44e839-9c56-4223-b48c-4ec5d12abcb0)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Login
+    - User Name - username
+    - Password - password
+- Landing Page
+- MessageView
+- Message
+- Bot Response
+- Snapshots
 
-### `npm run build`
+## Technologies_Used
+For this platform to be built , I have used React,Flask,MongoDB.
+- ReactJS
+  - Axios
+  - Material UI
+    - Paper
+    - Button
+    - Typography
+    - Box
+    - Input
+- Flask
+- MongoDB
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Functionalities and Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Provides User Login Service
+- Provides ChatBot facility for FAQ for a University. Implemended the chatbot service using a deep learning model.. Link - https://github.com/mdsimar1901/faq-chatbot-backend
+- Provides a data persistance service in the backend to store chat history.
+- Handles Ambiguity and asks for clarifications when needed.
+- Has a fallback strategy when stuck.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## How to run Locally
 
-### `npm run eject`
+>> 1.Click the above provided Live URL or Clone the Repo using 
+>>```sh
+>>git clone 
+>>```
+>>2.Install npm packages
+>>```sh
+>>npm install
+>>```
+>>3.Run the code
+>>```sh
+>>npm run
+>>```
+<br />
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Snapshots
+![login](https://github.com/mdsimar1901/faq-chatbot/assets/66200713/ae97102d-63f7-49be-98a9-a0b7211d067a)
+![landing_page](https://github.com/mdsimar1901/faq-chatbot/assets/66200713/c50520fe-a608-48f0-9840-66d35ff682d3)
+![chatbot](https://github.com/mdsimar1901/faq-chatbot/assets/66200713/9012d061-705a-4fe1-b167-effce903234c)
