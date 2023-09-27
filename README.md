@@ -1,29 +1,38 @@
 # Ai Powered Chatbot (Kyro Task)
 
 ## Description
+
 I have built a FAQ chatbot with a React and Typescript front-end, a Flask and MongoDB back-end, and a deep learning-powered chatbot that provides responses based on user input.
 
+<center>
+
+## Live Link - https://faq-chatbot-gcloud-deployment.vercel.app/
+
+## Backend Repo - https://github.com/mdsimar1901/faq-chatbot-backend
+
+</center>
 # Arcitecture
 
 ![Untitled-2023-09-27-1803](https://github.com/mdsimar1901/faq-chatbot/assets/66200713/818ae721-de99-47b2-b724-96e7ff5083cc)
 
 # Project Links
 
-| Description     | Link                                           |
-|-----------------|-----------------------------------------------|
-| Live Link       | [Live Demo](https://ai-powered-faqchatbot.netlify.app/) |
-| Backend Repo    | [GitHub Repository](https://github.com/mdsimar1901/faq-chatbot-backend) |
+| Description  | Link                                                                    |
+| ------------ | ----------------------------------------------------------------------- |
+| Live Link    | [Live Demo](https://faq-chatbot-gcloud-deployment.vercel.app/)          |
+| Backend Repo | [GitHub Repository](https://github.com/mdsimar1901/faq-chatbot-backend) |
 
 # Project Technology Stack
 
-| Layer      | Technology               |
-|------------|--------------------------|
-| Front-end  | React with TypeScript    |
-| Back-end   | Flask                    |
-| Database   | MongoDB                  |
-| Chatbot    | Deep Learning Model      |
+| Layer     | Technology            |
+| --------- | --------------------- |
+| Front-end | React with TypeScript |
+| Back-end  | Flask                 |
+| Database  | MongoDB               |
+| Chatbot   | Deep Learning Model   |
 
 ## Table of Contents
+
 - [Components](#components)
 - [Technologies_Used](#technologiesused)
 - [How to run Locally](#local)
@@ -34,8 +43,8 @@ I have built a FAQ chatbot with a React and Typescript front-end, a Flask and Mo
 ![components](https://github.com/mdsimar1901/faq-chatbot/assets/66200713/cc44e839-9c56-4223-b48c-4ec5d12abcb0)
 
 - Login
-    - User Name - username
-    - Password - password
+  - User Name - username
+  - Password - password
 - Landing Page
 - MessageView
 - Message
@@ -43,7 +52,9 @@ I have built a FAQ chatbot with a React and Typescript front-end, a Flask and Mo
 - Snapshots
 
 ## Technologies_Used
+
 For this platform to be built , I have used React,Flask,MongoDB.
+
 - ReactJS
   - Axios
   - react-router-dom
@@ -67,45 +78,62 @@ For this platform to be built , I have used React,Flask,MongoDB.
 ## How to run Locally
 
 ### FrontEnd
+
 Clone the repo
+
 ```
 $ git clone https://github.com/mdsimar1901/faq-chatbot.git
 ```
+
 Install npm packages
+
 ```
 npm install
 ```
+
 Run the code
+
 ```
 npm run
 ```
+
 <br />
 
 ### Backend
+
 Clone repo and create a virtual environment
+
 ```
 $ git clone https://github.com/mdsimar1901/faq-chatbot-backend.git
 $ cd faq-chatbot-backend
 $ python3 -m venv venv
 $ . venv/bin/activate
 ```
+
 Install dependencies
+
 ```
 $ (venv) pip install Flask torch torchvision nltk
 ```
+
 Install nltk package
+
 ```
 $ (venv) python
 >>> import nltk
 >>> nltk.download('punkt')
 ```
+
 Create your intents.json
 Run
+
 ```
 $ (venv) python train.py
 ```
+
 This will dump data.pth file. And then run
 the following command to test it in the console.
+
 ```
 $ (venv) python chat.py
 ```
