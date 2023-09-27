@@ -118,6 +118,6 @@ $ (venv) python chat.py
 ![landing_page](https://github.com/mdsimar1901/faq-chatbot/assets/66200713/c50520fe-a608-48f0-9840-66d35ff682d3)
 <br />
 <br/>
-![chatbot](https://github.com/mdsimar1901/faq-chatbot/assets/66200713/9012d061-705a-4fe1-b167-effce903234c)
+![Screenshot 2023-09-27 171548](https://github.com/mdsimar1901/faq-chatbot/assets/66200713/a3d5f019-0d01-41c1-95f3-b949fe39d25e)
 <br/>
 <br />
