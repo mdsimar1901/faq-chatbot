@@ -38,7 +38,7 @@ const Chatbot: React.FC<ChatbotProps> = () => {
 
         setTimeout(() => {
           axios
-            .post("https://faq-chatbotbackend-deploymentt.onrender.com/predict", {
+            .post("https://faq-chatbot-400302.el.r.appspot.com//predict", {
              text: customInput,
             })
             .then((response) => {
@@ -72,7 +72,7 @@ const Chatbot: React.FC<ChatbotProps> = () => {
 
       setTimeout(() => {
         axios
-          .post("https://faq-chatbotbackend-deploymentt.onrender.com/predict", {
+          .post("https://faq-chatbot-400302.el.r.appspot.com/predict", {
             text: inputText,
           })
           .then((response) => {
