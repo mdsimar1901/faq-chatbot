@@ -11,6 +11,7 @@ Live Link - https://faq-chatbot-gcloud-deployment.vercel.app/
 Backend Repo - https://github.com/mdsimar1901/faq-chatbot-backend
 
 </center>
+
 # Arcitecture
 
 ![Untitled-2023-09-27-1803](https://github.com/mdsimar1901/faq-chatbot/assets/66200713/818ae721-de99-47b2-b724-96e7ff5083cc)
