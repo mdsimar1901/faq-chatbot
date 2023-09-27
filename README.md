@@ -14,7 +14,8 @@ Backend Repo - https://github.com/mdsimar1901/faq-chatbot-backend
 
 # Arcitecture
 
-![Untitled-2023-09-27-1803](https://github.com/mdsimar1901/faq-chatbot/assets/66200713/818ae721-de99-47b2-b724-96e7ff5083cc)
+![Untitled-2023-09-27-1803](https://github.com/mdsimar1901/faq-chatbot/assets/66200713/8330da20-a966-42a1-bfb4-0b6b1683e633)
+
 
 # Project Links
 
