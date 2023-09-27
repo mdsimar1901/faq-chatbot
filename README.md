@@ -2,6 +2,11 @@
 
 ## Description
 I have built a FAQ chatbot with a React and Typescript front-end, a Flask and MongoDB back-end, and a deep learning-powered chatbot that provides responses based on user input.
+
+# Arcitecture
+
+![Untitled-2023-09-27-1803](https://github.com/mdsimar1901/faq-chatbot/assets/66200713/818ae721-de99-47b2-b724-96e7ff5083cc)
+
 # Project Links
 
 | Description     | Link                                           |
