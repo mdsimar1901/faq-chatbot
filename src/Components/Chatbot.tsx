@@ -34,12 +34,11 @@ const Chatbot: React.FC<ChatbotProps> = () => {
         ]);
         setCustomInput("");
 
-        // Send user input to the backend
         setIsLoading(true);
 
         setTimeout(() => {
           axios
-            .post("http://127.0.0.1:5000/predict", {
+            .post("https://faq-chatbotbackend-deploymentt.onrender.com/predict", {
              text: customInput,
             })
             .then((response) => {
@@ -69,12 +68,11 @@ const Chatbot: React.FC<ChatbotProps> = () => {
       ]);
       setInputText("");
 
-      // Send user input to the backend
       setIsLoading(true);
 
       setTimeout(() => {
         axios
-          .post("http://127.0.0.1:5000/predict", {
+          .post("https://faq-chatbotbackend-deploymentt.onrender.com/predict", {
             text: inputText,
           })
           .then((response) => {
@@ -110,7 +108,7 @@ const Chatbot: React.FC<ChatbotProps> = () => {
         position: "relative",
         outline: "none",
         border: "none",
-        color: "#000", // Text color
+        color: "#000", 
       }}
     >
       <Typography

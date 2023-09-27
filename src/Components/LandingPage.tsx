@@ -26,8 +26,8 @@ const LandingPage: React.FC = () => {
         Click on the below 🗨️icon to continue.
       </Typography>
       
-      <a href="https://github.com/" rel="noopener">GitHub Link</a>
-      <a href="" rel="noopener">Link for Documentation 📄</a>
+      <a href="https://github.com/mdsimar1901/faq-chatbot.git" rel="noopener">Frontend GitHub Link 📄</a>
+      <a href="https://github.com/mdsimar1901/faq-chatbot-backend.git" rel="noopener">Backend Github Link</a>
       <Slide
         direction={isBotActivated ? "up" : "down"}
         in={isBotActivated}
