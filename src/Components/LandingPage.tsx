@@ -28,6 +28,20 @@ const LandingPage: React.FC = () => {
       
       <a href="https://github.com/mdsimar1901/faq-chatbot.git" rel="noopener">Frontend GitHub Link 📄</a>
       <a href="https://github.com/mdsimar1901/faq-chatbot-backend.git" rel="noopener">Backend Github Link</a>
+      <Typography variant="h6" sx={styles.description}>
+        Some Questions you could ask.
+      </Typography>
+      <Typography variant="h6" sx={styles.description}>
+        Where is the college located?
+        <br/>
+        What is the college contact number?
+        <br/>
+        What are the courses offered?
+        <br/>
+        Information about hostel?
+        <br/>
+        Greetings
+      </Typography>
       <Slide
         direction={isBotActivated ? "up" : "down"}
         in={isBotActivated}
